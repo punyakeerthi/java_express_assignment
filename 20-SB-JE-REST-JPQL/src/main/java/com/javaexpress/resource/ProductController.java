@@ -166,4 +166,42 @@ public class ProductController {
 	public List<Product> fetchProductByNameContaining(@PathVariable("pname") String pname) {
 		return productService.fetchProductByNameContaining(pname);
 	}
+
+	@GetMapping("/fetchAllProductsUsingJPQL")
+	public List<Product> fetchAllProductsUsingJPQL() {
+		return productService.fetchAllProductsUsingJPQL();
+	}
+
+	@GetMapping("/fetchProductbyNameUsingJPQL/{pname}")
+	public Product fetchProductbyNameUsingJPQL(@PathVariable("pname") String pname) {
+
+		return productService.fetchProductbyNameUsingJPQL(pname);
+	}
+
+	@GetMapping("/fetchProductbyNameAndPriceUsingJPQL/{pprice}/{pname}")
+	public Product fetchProductbyNameAndPriceUsingJPQL(String productName, double productPrice) {
+		return productService.fetchProductbyNameAndPriceUsingJPQL(productName, productPrice);
+	}
+
+	@GetMapping("/fetchProductsUsingInnerJoinUsingJPQL")
+	public List<Product> fetchProductsUsingInnerJoinUsingJPQL() {
+		return productService.fetchProductsUsingInnerJoinUsingJPQL();
+	}
+
+	@GetMapping("/fetchProductDetailsUsingMultipleColumnsUsingJPQL/{id}")
+	public List<Object[]> fetchProductDetailsUsingMultipleColumnsUsingJPQL(@PathVariable("id") Integer id) {
+		return  productService.fetchProductDetailsUsingMultipleColumnsUsingJPQL(id);
+
+	}
+
+	@GetMapping("/fetchAllProductsUsingNativeQueryUsingJPQL/{id}")
+	public List<Product> fetchAllProductsUsingNativeQueryUsingJPQL() {
+		return productService.fetchAllProductsUsingNativeQueryUsingJPQL();
+	}
+
+	@GetMapping("/getAllProductsUsingJPQL/{pname}")
+	public List<Product> getAllProductsUsingJPQL(@PathVariable("pname") String pname) {
+		return productService.getAllProductsUsingJPQL(pname);
+	}
+
 }

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.jpa.repository.Query;
 
 import com.javaexpress.models.Product;
 import com.javaexpress.service.responses.ProductBoResponse;
@@ -52,4 +53,18 @@ public interface ProductService {
 	List<Product> fetchProductByCategoryName(String name);	
 	
 	List<Product> fetchProductByNameContaining(String name);
+	 
+	List<Product> fetchAllProductsUsingJPQL();
+	 
+	Product fetchProductbyNameUsingJPQL(String productName);
+	
+ 	Product fetchProductbyNameAndPriceUsingJPQL(String productName,double productPrice);
+	
+ 	List<Product> fetchProductsUsingInnerJoinUsingJPQL();
+	
+ 	List<Object[]> fetchProductDetailsUsingMultipleColumnsUsingJPQL(Integer id);
+	
+ 	List<Product> fetchAllProductsUsingNativeQueryUsingJPQL();
+	
+	List<Product> getAllProductsUsingJPQL(String name);
 }

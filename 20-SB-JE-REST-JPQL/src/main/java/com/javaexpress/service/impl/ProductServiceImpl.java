@@ -136,4 +136,41 @@ public class ProductServiceImpl implements ProductService {
 		return productRepository.findByNameContaining(name);
 	}
 
+	@Override
+	public List<Product> fetchAllProductsUsingJPQL() {
+		return productRepository.fetchAllProducts();
+	}
+
+	@Override
+	public Product fetchProductbyNameUsingJPQL(String productName) {
+		 
+		return  productRepository.fetchProductbyName(productName);
+	}
+
+	@Override
+	public Product fetchProductbyNameAndPriceUsingJPQL(String productName, double productPrice) {
+		return  productRepository.fetchProductbyNameAndPrice(productName, productPrice);
+	}
+
+	@Override
+	public List<Product> fetchProductsUsingInnerJoinUsingJPQL() {
+		return  productRepository.fetchProductsUsingInnerJoin();
+	}
+
+	@Override
+	public List<Object[]> fetchProductDetailsUsingMultipleColumnsUsingJPQL(Integer id) {
+		return  productRepository.fetchProductDetailsUsingMultipleColumns(id);
+
+	}
+
+	@Override
+	public List<Product> fetchAllProductsUsingNativeQueryUsingJPQL() {
+		return  productRepository.fetchAllProductsUsingNativeQuery();
+	}
+
+	@Override
+	public List<Product> getAllProductsUsingJPQL(String name) {
+		return  productRepository.getAllProducts(name);
+	}
+
 }
